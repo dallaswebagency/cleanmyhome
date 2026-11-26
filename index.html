@@ -7,285 +7,359 @@
 <meta name="description" content="Healthy homes start here. Professional eco-cleaning in Leduc, Edmonton & surrounding areas, including Beaumont, Calmar, St. Albert & Spruce Grove. Book your clean today!">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
 <style>
 :root{
   --swoosh:#3F9DDB;
+  --sky:#8CC6EE;
   --blue:#2B6FAE;
-  --blue-deep:#1D4F80;
+  --deep:#123A5E;
+  --night:#0C2640;
   --char:#3E3F3A;
   --char-deep:#2A2B27;
-  --ice:#EAF4FB;
-  --mist:#C9D6E0;
-  --paper:#FFFFFF;
-  --ink:#2A2B27;
-  --soft:#5D5F58;
+  --ice:#F1F7FC;
+  --tint:#DCEDF9;
+  --line:#D6E3EE;
+  --soft:#5A5D57;
   --ease:cubic-bezier(.65,.05,.25,1);
+  --out:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Archivo',system-ui,sans-serif;font-stretch:100%;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Archivo',system-ui,sans-serif;color:var(--char-deep);background:#fff;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--swoosh);outline-offset:3px;border-radius:4px}
-.wrap{width:min(1220px,100% - 48px);margin-inline:auto}
-h1,h2,h3{font-stretch:125%;font-weight:800;line-height:1.04;letter-spacing:-.01em;color:var(--char-deep)}
-h2{font-size:clamp(2rem,4.2vw,3.4rem)}
-.lede{font-size:1.15rem;color:var(--soft);max-width:56ch}
+:focus-visible{outline:3px solid var(--swoosh);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1280px,100% - 56px);margin-inline:auto}
+h1,h2,h3{font-stretch:125%;font-weight:800;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(2.2rem,4.6vw,3.9rem)}
+.lede{font-size:1.15rem;color:var(--soft);max-width:54ch}
+.kicker{display:inline-flex;align-items:center;gap:.7rem;font-weight:600;font-stretch:110%;color:var(--blue);margin-bottom:1.1rem;font-size:1rem}
+.kicker svg{width:42px;height:14px}
 
 /* buttons */
-.btn{--bg:var(--swoosh);--fg:#fff;position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.6em;padding:1rem 1.6rem;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:700;font-stretch:112%;text-decoration:none;font-size:1rem;border:2px solid var(--bg);transition:transform .25s var(--ease),background .25s}
-.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn{--bg:var(--swoosh);--fg:#fff;position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:.65em;padding:1.05rem 1.75rem;border-radius:999px;background:var(--bg);color:var(--fg);font-weight:700;font-stretch:112%;text-decoration:none;font-size:1rem;border:2px solid var(--bg);transition:transform .35s var(--out),box-shadow .35s;white-space:nowrap}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.5) 50%,transparent 65%);transform:translateX(-120%);transition:transform .8s var(--ease)}
 .btn:hover::after{transform:translateX(120%)}
-.btn:hover{transform:translateY(-2px)}
-.btn--dark{--bg:var(--char-deep)}
-.btn--ghost{background:transparent;color:var(--char-deep);border-color:var(--char-deep)}
-.btn--white{--bg:#fff;--fg:var(--blue-deep)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 18px 30px -14px rgba(63,157,219,.7)}
 .btn svg{width:18px;height:18px;flex:none}
+.btn--line{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn--line:hover{border-color:#fff;box-shadow:none}
+.btn--dark{--bg:var(--night)}
+.btn--white{--bg:#fff;--fg:var(--deep)}
+.btn--ghost{background:transparent;color:var(--deep);border-color:var(--deep)}
 
-/* top bar + header */
-.topbar{background:var(--char-deep);color:#e6e7e2;font-size:.88rem}
+/* header */
+.topbar{background:var(--night);color:#c9d7e4;font-size:.86rem;position:relative;z-index:60}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem 0}
 .topbar a{text-decoration:none;color:#fff}
-.topbar a:hover{color:var(--swoosh)}
-.topbar .links{display:flex;gap:1.6rem;align-items:center}
-header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e3ebf1}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.7rem 0}
-.nav .logo img{height:70px;width:auto}
-.menu{display:flex;gap:.3rem;list-style:none;align-items:center}
+.topbar a:hover{color:var(--sky)}
+.topbar .links{display:flex;gap:1.6rem}
+header.site{position:sticky;top:0;z-index:50;transition:background .4s,box-shadow .4s}
+header.site.solid{background:rgba(255,255,255,.96);backdrop-filter:blur(12px);box-shadow:0 10px 30px -20px rgba(12,38,64,.4)}
+.home header.site:not(.solid){background:transparent;margin-bottom:-104px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.8rem 0;height:104px}
+.logo{position:relative;display:block;height:76px;width:192px}
+.logo img{position:absolute;inset:0;height:100%;width:auto;transition:opacity .4s}
+.logo .dark{opacity:0}
+.solid .logo .dark{opacity:1}.solid .logo .light{opacity:0}
+.menu{display:flex;gap:.15rem;list-style:none;align-items:center}
 .menu>li{position:relative}
-.menu>li>a,.menu>li>button{display:block;padding:.6rem .85rem;font:inherit;font-size:.95rem;font-weight:600;text-decoration:none;background:none;border:0;color:var(--char-deep);cursor:pointer;border-radius:8px}
-.menu>li>a:hover,.menu>li>button:hover{color:var(--blue)}
-.menu .caret{display:inline-block;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);margin-left:.45rem}
-.drop{position:absolute;top:100%;left:0;min-width:290px;background:#fff;border-radius:14px;box-shadow:0 24px 50px -20px rgba(29,79,128,.35);border:1px solid #e3ebf1;padding:.6rem;list-style:none;opacity:0;visibility:hidden;transform:translateY(8px);transition:.25s var(--ease)}
+.menu>li>a,.menu>li>button{display:block;padding:.6rem .85rem;font:inherit;font-size:.95rem;font-weight:600;text-decoration:none;background:none;border:0;color:#fff;cursor:pointer;border-radius:8px;transition:color .3s}
+.solid .menu>li>a,.solid .menu>li>button{color:var(--char-deep)}
+.menu>li>a:hover,.menu>li>button:hover{color:var(--sky)}
+.solid .menu>li>a:hover,.solid .menu>li>button:hover{color:var(--blue)}
+.caret{display:inline-block;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);margin-left:.45rem}
+.drop{position:absolute;top:100%;left:0;min-width:290px;background:#fff;border-radius:16px;box-shadow:0 30px 60px -24px rgba(12,38,64,.45);padding:.6rem;list-style:none;opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s var(--out)}
 .menu>li:hover .drop,.menu>li:focus-within .drop{opacity:1;visibility:visible;transform:none}
-.drop a{display:block;padding:.55rem .8rem;border-radius:8px;text-decoration:none;font-size:.92rem}
+.drop a{display:block;padding:.55rem .8rem;border-radius:9px;text-decoration:none;font-size:.92rem;color:var(--char-deep)}
 .drop a:hover{background:var(--ice);color:var(--blue)}
 .drop.cols{display:grid;grid-template-columns:1fr 1fr;min-width:440px}
-.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
-.burger span{display:block;width:24px;height:2px;background:var(--char-deep);margin:5px auto;transition:.3s}
+.burger{display:none;background:none;border:0;width:46px;height:46px;cursor:pointer}
+.burger span{display:block;width:24px;height:2px;background:#fff;margin:5px auto}
+.solid .burger span{background:var(--char-deep)}
 
 /* HERO */
-.hero{position:relative;padding:clamp(3rem,7vw,6rem) 0 clamp(4rem,8vw,7rem);overflow:hidden}
-.hero::before{content:"";position:absolute;right:-18vw;top:-10%;width:72vw;height:120%;background:var(--ice);border-radius:50%;transform:rotate(-12deg);z-index:-1}
-.hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:3rem;align-items:center}
-.hero h1{font-size:clamp(2.5rem,5.3vw,4.7rem);margin-bottom:1.4rem;position:relative}
-.wipe{display:block;clip-path:inset(0 100% 0 0);animation:reveal 1.1s var(--ease) .35s forwards}
-.wipe-bar{position:absolute;top:0;bottom:0;left:0;width:22px;background:var(--swoosh);border-radius:12px;transform:skewX(-14deg);animation:bar 1.1s var(--ease) .35s forwards;opacity:0}
-@keyframes reveal{to{clip-path:inset(0 0 0 0)}}
-@keyframes bar{0%{left:0;opacity:1}90%{opacity:1}100%{left:100%;opacity:0}}
-.hero .sub{font-size:1.2rem;color:var(--soft);max-width:46ch;margin-bottom:2rem;opacity:0;animation:up .8s var(--ease) 1.1s forwards}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;opacity:0;animation:up .8s var(--ease) 1.25s forwards}
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.assure{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:2.4rem;padding-top:1.6rem;border-top:1px dashed var(--mist);font-size:.95rem;color:var(--char);opacity:0;animation:up .8s var(--ease) 1.4s forwards}
-.assure span{display:flex;align-items:center;gap:.5rem}
-.assure svg{width:20px;height:20px;color:var(--swoosh)}
-
-.stage{position:relative;aspect-ratio:1/1.08;max-width:520px;justify-self:center;width:100%}
-.oval{position:absolute;inset:6% 12% 4% 14%;border-radius:50%;overflow:hidden;transform:rotate(-9deg);box-shadow:0 40px 80px -40px rgba(29,79,128,.55)}
-.oval img{width:100%;height:100%;object-fit:cover;transform:rotate(9deg) scale(1.18)}
-.orbits{position:absolute;inset:-4%;width:108%;height:108%;overflow:visible;pointer-events:none}
-.orbits path{fill:none;stroke:var(--swoosh);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s var(--ease) forwards}
-.orbits path:nth-child(2){animation-delay:.2s}
-.orbits path:nth-child(3){animation-delay:.4s}
+.hero{position:relative;background:radial-gradient(120% 90% at 80% 10%,#1E5486 0%,var(--deep) 42%,var(--night) 100%);color:#fff;padding:calc(104px + clamp(2rem,5vw,4rem)) 0 0;overflow:hidden;isolation:isolate}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:140px;background:linear-gradient(transparent,rgba(12,38,64,.6));z-index:-1}
+.sweeps{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.sweeps path{fill:none;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s var(--ease) forwards}
+.sweeps path:nth-child(2){animation-delay:.18s}.sweeps path:nth-child(3){animation-delay:.36s}.sweeps path:nth-child(4){animation-delay:.54s}
 @keyframes draw{to{stroke-dashoffset:0}}
-.orbit-spin{transform-origin:50% 50%;animation:drift 38s linear 2s infinite}
-@keyframes drift{to{transform:rotate(360deg)}}
-.bubble{position:absolute;left:-2%;bottom:6%;width:34%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid #fff;box-shadow:0 20px 40px -18px rgba(0,0,0,.35);opacity:0;animation:pop .7s var(--ease) 1.5s forwards}
-.bubble img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
-@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
-.chip{position:absolute;right:0;top:12%;background:#fff;border-radius:16px;padding:.8rem 1rem;box-shadow:0 18px 40px -18px rgba(29,79,128,.4);font-size:.85rem;line-height:1.3;display:flex;gap:.7rem;align-items:center;opacity:0;animation:pop .7s var(--ease) 1.7s forwards;max-width:220px}
-.chip img{width:26px;height:26px}
-.chip b{display:block;color:#e8a21a;letter-spacing:2px;font-size:.95rem}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;min-height:min(760px,calc(100vh - 140px))}
+.hero .kicker{color:var(--sky)}
+.hero h1{font-size:clamp(2.5rem,4.7vw,4.5rem);color:#fff;position:relative;margin-bottom:1.6rem}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:block;transform:translateY(105%);animation:rise 1.1s var(--out) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.12s}.hero h1 .ln:nth-child(3)>span{animation-delay:.24s}
+.hero h1 .thin{font-weight:300;font-style:italic;font-stretch:100%;color:var(--sky)}
+@keyframes rise{to{transform:none}}
+.hero .sub{font-size:1.2rem;color:#c7d8e8;max-width:44ch;margin-bottom:2.2rem;opacity:0;animation:fade .9s var(--out) .7s forwards}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.8rem;opacity:0;animation:fade .9s var(--out) .85s forwards}
+@keyframes fade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.collage{position:relative;height:clamp(520px,52vw,680px)}
+.arch{position:absolute;overflow:hidden;border-radius:999px 999px 26px 26px;box-shadow:0 50px 80px -40px rgba(0,0,0,.7)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch.a1{right:4%;top:0;width:62%;height:88%;opacity:0;animation:fade 1.2s var(--out) .3s forwards}
+.arch.a1 img{animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{to{transform:scale(1.08)}}
+.arch.a2{left:2%;bottom:4%;width:40%;height:52%;border:7px solid var(--deep);opacity:0;animation:fade 1.2s var(--out) .6s forwards}
+.ring{position:absolute;right:-2%;top:-4%;width:24%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,.95);opacity:0;animation:fade 1.2s var(--out) .9s forwards}
+.ring img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:rgba(255,255,255,.96);color:var(--char-deep);border-radius:18px;padding:.9rem 1.1rem;box-shadow:0 26px 50px -22px rgba(0,0,0,.6);font-size:.86rem;line-height:1.35;opacity:0;animation:fade 1s var(--out) forwards,bob 6s ease-in-out 2s infinite}
+.float.f1{left:-4%;top:12%;display:flex;gap:.75rem;align-items:center;animation-delay:1.1s,2.2s}
+.float.f1 img{width:28px;height:28px}
+.float.f1 b{display:block;color:#E8A21A;letter-spacing:2px}
+.float.f2{right:-3%;bottom:14%;max-width:210px;animation-delay:1.3s,3s}
+.float.f2 b{display:block;font-stretch:112%;font-size:.95rem;color:var(--deep)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+
+.assure{margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:repeat(4,1fr)}
+.assure div{padding:1.5rem 1.4rem 1.7rem;border-right:1px solid rgba(255,255,255,.14);display:flex;gap:.9rem;align-items:flex-start;font-size:.95rem;color:#d3e1ee;line-height:1.4}
+.assure div:first-child{padding-left:0}
+.assure div:last-child{border-right:0}
+.assure svg{width:26px;height:26px;flex:none;color:var(--sky);margin-top:2px}
+.assure b{display:block;color:#fff;font-stretch:112%;font-size:1rem;margin-bottom:.15rem}
+
+/* service-area ribbon */
+.ribbon{background:var(--swoosh);color:#fff;overflow:hidden;padding:1.15rem 0;position:relative}
+.ribbon .track{display:flex;gap:2.4rem;width:max-content;animation:slide 40s linear infinite}
+.ribbon span{font-stretch:125%;font-weight:800;font-size:1.5rem;display:flex;align-items:center;gap:2.4rem;white-space:nowrap}
+.ribbon span::after{content:"";width:34px;height:12px;border-top:3px solid rgba(255,255,255,.75);border-radius:50%;transform:rotate(-8deg)}
+@keyframes slide{to{transform:translateX(-50%)}}
 
 /* CONSULTATION */
-.consult{background:var(--char-deep);color:#fff;position:relative;overflow:hidden}
-.consult .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center;padding:clamp(3.5rem,7vw,6rem) 0}
-.consult h2{color:#fff}
-.consult p{color:#cfd1ca;font-size:1.12rem;margin:1.2rem 0 2rem;max-width:52ch}
-.plan{width:100%;height:auto}
-.plan .walls{fill:none;stroke:#5b5d55;stroke-width:3}
-.plan .room{fill:#33342f}
-.plan .route{fill:none;stroke:var(--swoosh);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 14;}
-.plan .route-mask{fill:none;stroke:#fff;stroke-width:12;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 3.2s var(--ease)}
+.consult{background:var(--ice);padding:clamp(5rem,9vw,8rem) 0;position:relative;overflow:hidden}
+.consult .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.cvis{position:relative}
+.cvis .photo{border-radius:30px 30px 30px 220px;overflow:hidden;aspect-ratio:1.1/1;box-shadow:0 50px 80px -50px rgba(12,38,64,.6)}
+.cvis .photo img{width:100%;height:100%;object-fit:cover}
+.plancard{position:absolute;right:-8%;bottom:-12%;width:62%;background:var(--night);border-radius:22px;padding:1rem;box-shadow:0 40px 60px -30px rgba(12,38,64,.7)}
+.plancard small{display:block;color:var(--sky);font-weight:600;font-stretch:110%;margin:0 0 .5rem .3rem;font-size:.8rem}
+.plan{width:100%;height:auto;display:block}
+.plan .walls{fill:none;stroke:#3a5675;stroke-width:3}
+.plan .route{fill:none;stroke:var(--swoosh);stroke-width:4;stroke-linecap:round;stroke-dasharray:2 13}
+.plan .route-mask{fill:none;stroke:#fff;stroke-width:14;stroke-dasharray:1200;stroke-dashoffset:1200;transition:stroke-dashoffset 3s var(--ease)}
 .plan.on .route-mask{stroke-dashoffset:0}
 .plan .pin{fill:var(--swoosh);opacity:0;transition:opacity .4s}
 .plan.on .pin{opacity:1}
-.plan.on .pin:nth-of-type(2){transition-delay:.9s}.plan.on .pin:nth-of-type(3){transition-delay:1.8s}.plan.on .pin:nth-of-type(4){transition-delay:2.8s}
-.plan text{fill:#9a9c93;font-family:'Archivo',sans-serif;font-size:13px;font-weight:600}
+.plan.on .pin:nth-of-type(2){transition-delay:.9s}.plan.on .pin:nth-of-type(3){transition-delay:1.8s}.plan.on .pin:nth-of-type(4){transition-delay:2.7s}
+.plan text{fill:#7d97b2;font-family:'Archivo',sans-serif;font-size:14px;font-weight:600}
+.consult h2{color:var(--night);margin-bottom:1.3rem}
+.consult .lede{margin-bottom:2.2rem}
+.steps{display:grid;gap:0;margin:0 0 2.2rem;list-style:none;border-top:1px solid var(--line)}
+.steps li{display:flex;gap:1rem;align-items:center;padding:1rem 0;border-bottom:1px solid var(--line);font-weight:600;font-stretch:108%}
+.steps li i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--blue);font-size:.85rem;font-weight:800;box-shadow:0 6px 14px -8px rgba(12,38,64,.5);flex:none}
 
-/* OFFER CHECKLIST */
-.offer{padding:clamp(4rem,8vw,7rem) 0}
-.offer .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}
-.offer .intro{position:sticky;top:120px}
-.offer .intro p{margin-top:1.2rem}
-.sheet{background:#fff;border:1px solid #dfe8ef;border-radius:28px 28px 28px 6px;padding:1rem 2rem;box-shadow:0 30px 60px -40px rgba(29,79,128,.35);position:relative}
-.sheet::before{content:"";position:absolute;left:-1px;top:28px;bottom:28px;width:5px;background:var(--swoosh);border-radius:0 4px 4px 0}
-.row{display:grid;grid-template-columns:38px 1fr;gap:1.1rem;padding:1.35rem 0;border-bottom:1px dashed #d4e0e9}
+/* OFFER over photo */
+.offer{position:relative;padding:clamp(5rem,9vw,8rem) 0;color:#fff;isolation:isolate;overflow:hidden}
+.offer .bg{position:absolute;inset:-10% 0;z-index:-2;background:url(images/living-room.jpg) center/cover no-repeat}
+.offer::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,38,64,.94) 0%,rgba(12,38,64,.82) 42%,rgba(12,38,64,.35) 100%)}
+.offer .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.offer .intro{position:sticky;top:130px}
+.offer h2{color:#fff}
+.offer .intro p{color:#c7d8e8;margin-top:1.2rem}
+.offer .kicker{color:var(--sky)}
+.sheet{background:#fff;color:var(--char-deep);border-radius:30px;padding:1rem 2.2rem 0;overflow:hidden;box-shadow:0 60px 90px -50px rgba(0,0,0,.8);position:relative}
+.sheet::before{content:"";position:absolute;left:-1px;top:30px;bottom:30px;width:5px;background:var(--swoosh);border-radius:0 4px 4px 0}
+.row{display:grid;grid-template-columns:40px 1fr;gap:1.1rem;padding:1.35rem 0;border-bottom:1px dashed var(--line)}
 .row:last-child{border-bottom:0}
-.box{width:30px;height:30px;border:2px solid var(--mist);border-radius:8px;display:grid;place-items:center;margin-top:2px;transition:border-color .3s,background .3s}
+.box{width:30px;height:30px;border:2px solid #c3d3e0;border-radius:9px;display:grid;place-items:center;margin-top:2px;transition:border-color .3s,background .3s}
 .box svg{width:18px;height:18px}
 .box path{fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;transition:stroke-dashoffset .45s var(--ease) .15s}
 .row.done .box{background:var(--swoosh);border-color:var(--swoosh)}
 .row.done .box path{stroke-dashoffset:0}
-.row h3{font-size:1.18rem;font-stretch:110%;font-weight:700;line-height:1.25}
-.row p{color:var(--soft);margin-top:.25rem;font-size:.98rem}
-.row.bundle{background:var(--ice);margin:0 -2rem;padding:1.4rem 2rem;border-radius:0 0 26px 6px}
+.row h3{font-size:1.15rem;font-stretch:110%;font-weight:700;line-height:1.25}
+.row p{color:var(--soft);margin-top:.25rem;font-size:.97rem}
+.row.bundle{background:var(--tint);margin:.4rem -2.2rem 0;padding:1.5rem 2.2rem 1.7rem}
 
 /* SERVICES */
-.services{background:var(--ice);padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden}
-.services::after{content:"";position:absolute;width:900px;height:360px;border:2px solid rgba(63,157,219,.25);border-radius:50%;right:-300px;top:-140px;transform:rotate(-10deg)}
-.svc-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:2.6rem}
-.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem;position:relative;z-index:1}
-.tab{font:inherit;font-weight:700;font-stretch:108%;padding:.8rem 1.25rem;border-radius:999px;border:2px solid var(--char-deep);background:transparent;color:var(--char-deep);cursor:pointer;transition:.25s}
-.tab[aria-selected="true"]{background:var(--char-deep);color:#fff}
-.tab:hover{border-color:var(--blue)}
-.panel{display:none;grid-template-columns:1.25fr .75fr;background:#fff;border-radius:32px;overflow:hidden;position:relative;z-index:1;box-shadow:0 40px 70px -50px rgba(29,79,128,.5)}
-.panel.show{display:grid;animation:panel .5s var(--ease)}
-@keyframes panel{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.panel .body{padding:clamp(1.8rem,4vw,3rem)}
-.panel h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:1.4rem}
-.items{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1.3rem 2rem}
-.items li{padding-left:1.4rem;position:relative}
-.items li::before{content:"";position:absolute;left:0;top:.55em;width:10px;height:10px;border-radius:50%;border:2.5px solid var(--swoosh)}
-.items b{display:block;font-weight:700;line-height:1.3}
-.items span{display:block;color:var(--soft);font-size:.95rem;margin-top:.2rem}
-.isnt{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.isnt h4{font-stretch:115%;font-size:1.05rem;margin-bottom:.5rem;color:var(--blue)}
+.services{padding:clamp(5rem,9vw,8rem) 0}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:3.4rem}
+.svc-head h2{color:var(--night)}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.tabs{display:grid;border-top:1px solid var(--line)}
+.tab{display:flex;justify-content:space-between;align-items:center;gap:1rem;text-align:left;font:inherit;font-weight:800;font-stretch:122%;font-size:clamp(1.35rem,2.2vw,1.85rem);padding:1.2rem 0;border:0;border-bottom:1px solid var(--line);background:none;color:#a5b3c0;cursor:pointer;transition:color .35s;line-height:1.1}
+.tab .arc{width:44px;height:16px;flex:none;opacity:0;transform:translateX(-10px);transition:.4s var(--out)}
+.tab:hover{color:var(--blue)}
+.tab[aria-selected="true"]{color:var(--night)}
+.tab[aria-selected="true"] .arc{opacity:1;transform:none}
+.detail{display:none;padding:1.8rem 0 2rem;border-bottom:1px solid var(--line)}
+.detail.show{display:block;animation:fade .55s var(--out)}
+.items{list-style:none;display:grid;gap:1rem}
+.items li{padding-left:1.7rem;position:relative}
+.items li::before{content:"";position:absolute;left:0;top:.5em;width:11px;height:11px;border-radius:50%;border:3px solid var(--swoosh)}
+.items b{display:block;font-weight:700;line-height:1.35}
+.items span{display:block;color:var(--soft);font-size:.96rem;margin-top:.15rem}
+.isnt{display:grid;gap:1.2rem}
+.isnt div{padding:1.2rem 1.3rem;border-radius:18px;background:var(--ice)}
+.isnt div:last-child{background:#fff;border:1.5px dashed var(--line)}
+.isnt h4{font-stretch:115%;font-size:1.02rem;margin-bottom:.4rem;color:var(--blue)}
 .isnt div:last-child h4{color:var(--char)}
-.isnt p{color:var(--soft);font-size:.96rem}
-.panel .art{background:var(--char-deep);display:grid;place-items:center;padding:2rem;position:relative;overflow:hidden}
-.panel .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-.panel .art .tag{position:relative;background:#fff;border-radius:999px;padding:.55rem 1rem;font-weight:700;font-size:.85rem;align-self:end;justify-self:start}
-.panel .art svg{width:70%;max-width:240px;position:relative}
-.addons{margin-top:2.2rem;display:grid;grid-template-columns:.7fr 1.3fr;gap:2rem;align-items:center;position:relative;z-index:1}
-.addons h3{font-size:1.6rem}
-.addons p{color:var(--soft);margin-top:.4rem}
-.chips{display:flex;flex-wrap:wrap;gap:.6rem}
-.chips span{background:#fff;border:1.5px solid var(--mist);padding:.6rem 1rem;border-radius:12px;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.5rem}
-.chips span::before{content:"+";color:var(--swoosh);font-weight:800;font-size:1.1rem;line-height:1}
-.svc-cta{margin-top:2.6rem;text-align:center;position:relative;z-index:1}
+.isnt p{color:var(--soft);font-size:.95rem}
+.stage{position:sticky;top:130px;aspect-ratio:4/4.4;border-radius:999px 999px 34px 34px;overflow:hidden;box-shadow:0 60px 90px -55px rgba(12,38,64,.7)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .8s var(--ease),transform 1.4s var(--out)}
+.stage img.on{opacity:1;transform:none}
+.stage .lbl{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);background:rgba(255,255,255,.95);border-radius:999px;padding:.6rem 1.2rem;font-weight:700;font-size:.9rem;white-space:nowrap;color:var(--deep)}
+
+.addons{margin-top:clamp(4rem,7vw,6rem);background:var(--night);color:#fff;border-radius:34px;padding:clamp(2rem,4vw,3.2rem);display:grid;grid-template-columns:.75fr 1.25fr;gap:2.4rem;align-items:center;position:relative;overflow:hidden}
+.addons::after{content:"";position:absolute;width:700px;height:260px;border:2px solid rgba(63,157,219,.35);border-radius:50%;right:-220px;top:-150px;transform:rotate(-12deg)}
+.addons h3{font-size:clamp(1.6rem,2.5vw,2.1rem);color:#fff}
+.addons p{color:#b9cadb;margin-top:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;position:relative;z-index:1}
+.chips span{border:1.5px solid rgba(255,255,255,.25);padding:.65rem 1.1rem;border-radius:999px;font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.5rem;transition:.3s}
+.chips span:hover{background:var(--swoosh);border-color:var(--swoosh)}
+.chips span::before{content:"+";color:var(--sky);font-weight:800;font-size:1.15rem;line-height:1}
+.chips span:hover::before{color:#fff}
+.svc-cta{display:flex;justify-content:center;margin-top:2.6rem}
 
 /* WHY */
-.why{padding:clamp(4rem,8vw,7rem) 0}
-.why .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
-.portrait{position:relative;max-width:460px;width:100%;aspect-ratio:1/1.1;justify-self:center}
-.portrait .frame{position:absolute;inset:4% 8%;border-radius:48% 48% 48% 48%/42% 42% 58% 58%;overflow:hidden}
-.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
-.portrait svg{position:absolute;inset:-3%;width:106%;height:106%}
+.why{padding:clamp(5rem,9vw,8rem) 0;background:linear-gradient(180deg,#fff 0%,var(--ice) 100%)}
+.why .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2.5rem,6vw,6rem);align-items:center}
+.portrait{position:relative;max-width:500px;width:100%;justify-self:center}
+.portrait .frame{border-radius:999px 999px 34px 34px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 50px 80px -50px rgba(12,38,64,.6)}
+.portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.portrait svg{position:absolute;left:-12%;top:-6%;width:124%;height:auto;pointer-events:none}
 .portrait svg path{fill:none;stroke:var(--swoosh);stroke-linecap:round}
-.why .eyebrow{color:var(--blue);font-weight:700;font-stretch:112%;font-size:1.05rem;margin-bottom:.6rem}
-.why h2{margin-bottom:1.4rem}
-.why .history{margin-top:2rem;padding:1.6rem 1.8rem;border-radius:22px;background:var(--ice);display:grid;gap:.4rem}
-.why .history h3{font-size:1.25rem;font-stretch:112%}
-.why .history p{color:var(--soft)}
-.why .duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
-.why .duo div{border:1.5px solid #dfe8ef;border-radius:18px;padding:1.2rem 1.3rem}
-.why .duo b{display:block;font-stretch:112%}
-.why .duo span{color:var(--soft);font-size:.95rem}
+.portrait .tagcard{position:absolute;right:-6%;bottom:9%;background:#fff;border-radius:18px;padding:1rem 1.2rem;box-shadow:0 26px 50px -24px rgba(12,38,64,.55);font-weight:700;font-stretch:110%;color:var(--deep);display:flex;align-items:center;gap:.7rem}
+.portrait .tagcard i{width:38px;height:38px;border-radius:50%;background:var(--tint);display:grid;place-items:center;color:var(--blue)}
+.portrait .tagcard svg{position:static;width:20px;height:20px}
+.why h2{color:var(--night);margin-bottom:1.4rem}
+.history{margin-top:2.2rem;padding:1.7rem 1.9rem;border-radius:24px;background:#fff;border:1px solid var(--line);position:relative}
+.history h3{font-size:1.3rem;font-stretch:112%;color:var(--night);margin-bottom:.4rem}
+.history p{color:var(--soft)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.duo div{background:var(--night);color:#fff;border-radius:20px;padding:1.3rem 1.4rem}
+.duo b{display:block;font-stretch:112%}
+.duo span{color:#b9cadb;font-size:.95rem}
+.why .more{margin-top:2rem}
 
 /* REVIEWS */
-.reviews{background:var(--char-deep);color:#fff;padding:clamp(4rem,8vw,7rem) 0;position:relative;overflow:hidden}
-.reviews::before{content:"";position:absolute;width:1200px;height:420px;border:2px solid rgba(63,157,219,.35);border-radius:50%;left:-380px;bottom:-260px;transform:rotate(-8deg)}
+.reviews{background:radial-gradient(100% 120% at 0% 100%,#1E5486 0%,var(--deep) 45%,var(--night) 100%);color:#fff;padding:clamp(5rem,9vw,8rem) 0;position:relative;overflow:hidden}
+.reviews::before{content:"";position:absolute;width:1300px;height:460px;border:2px solid rgba(140,198,238,.25);border-radius:50%;right:-460px;top:-220px;transform:rotate(-10deg)}
 .reviews h2{color:#fff}
-.rv{display:grid;grid-template-columns:.75fr 1.25fr;gap:3rem;margin-top:2.6rem;align-items:start;position:relative}
+.reviews .kicker{color:var(--sky)}
+.rv{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(2rem,5vw,5rem);margin-top:3rem;align-items:center;position:relative}
+.quote{position:relative;min-height:300px}
+.quote blockquote{display:none;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.45;font-weight:300;font-stretch:96%}
+.quote blockquote.show{display:block;animation:fade .6s var(--out)}
+.stars{color:#F0B429;letter-spacing:5px;font-size:1.3rem;margin-bottom:1.2rem}
+.src{display:flex;align-items:center;gap:.6rem;margin-top:1.6rem;font-size:.92rem;color:#b9cadb}
+.src img{width:20px;height:20px}
+.qmark{position:absolute;right:0;top:-1.5rem;width:110px;opacity:.16}
 .who{display:grid;gap:.7rem}
-.who button{display:flex;align-items:center;gap:1rem;text-align:left;padding:.9rem 1.1rem;background:transparent;border:1.5px solid #4a4b45;border-radius:18px;color:#fff;font:inherit;cursor:pointer;transition:.25s}
-.who button[aria-selected="true"]{background:#fff;color:var(--char-deep);border-color:#fff}
-.who img{width:48px;height:48px;border-radius:50%}
+.who button{display:flex;align-items:center;gap:1rem;text-align:left;padding:1rem 1.15rem;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.14);border-radius:20px;color:#fff;font:inherit;cursor:pointer;transition:.35s var(--out)}
+.who button:hover{border-color:rgba(255,255,255,.4)}
+.who button[aria-selected="true"]{background:#fff;color:var(--night);border-color:#fff;transform:translateX(-8px)}
+.who img{width:50px;height:50px;border-radius:50%}
 .who b{display:block;font-stretch:110%}
 .who small{opacity:.7}
-.quote{position:relative;min-height:260px}
-.quote blockquote{display:none;font-size:clamp(1.25rem,2.2vw,1.7rem);line-height:1.5;font-weight:400;font-stretch:96%}
-.quote blockquote.show{display:block;animation:panel .5s var(--ease)}
-.quote .stars{color:#f0b429;letter-spacing:4px;font-size:1.2rem;margin-bottom:1rem}
-.quote .src{display:flex;align-items:center;gap:.6rem;margin-top:1.4rem;font-size:.92rem;color:#c3c5bd}
-.quote .src img{width:20px;height:20px}
-.qmark{position:absolute;right:0;top:-40px;width:110px;opacity:.18}
 
-/* QUOTE / CONTACT */
-.cta{background:linear-gradient(115deg,var(--blue-deep) 0%,var(--blue) 55%,#3586C9 100%);color:#fff;position:relative;overflow:hidden;padding:clamp(4rem,8vw,6.5rem) 0}
-.cta svg.sweep{position:absolute;inset:0;width:100%;height:100%}
-.cta .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
-.cta h2{color:#fff;font-size:clamp(2.4rem,5vw,4.2rem)}
-.cta p{font-size:1.15rem;margin:1rem 0 2rem;max-width:44ch;color:#f2f8fd}
+/* QUOTE */
+.cta{position:relative;padding:clamp(5rem,9vw,8rem) 0;color:#fff;isolation:isolate;overflow:hidden}
+.cta .bg{position:absolute;inset:0;z-index:-2;background:url(images/kitchen.jpg) center 40%/cover}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(105deg,rgba(43,111,174,.96) 0%,rgba(43,111,174,.9) 45%,rgba(18,58,94,.55) 100%)}
+.cta svg.sweep{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.cta .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.cta h2{color:#fff;font-size:clamp(2.6rem,5.4vw,4.6rem)}
+.cta p{font-size:1.15rem;margin:1.1rem 0 2.2rem;max-width:44ch;color:#e6f1fa}
 .cta .ctas{display:flex;flex-wrap:wrap;gap:.8rem}
-.contact-card{background:#fff;color:var(--char-deep);border-radius:28px;padding:2rem;box-shadow:0 40px 60px -40px rgba(0,0,0,.45)}
-.contact-card a.line{display:flex;align-items:center;gap:.9rem;text-decoration:none;padding:.9rem 0;border-bottom:1px dashed #d4e0e9;font-weight:700;word-break:break-word}
+.contact-card{background:#fff;color:var(--char-deep);border-radius:30px;padding:2.1rem;box-shadow:0 50px 80px -40px rgba(0,0,0,.55)}
+.contact-card a.line{display:flex;align-items:center;gap:.9rem;text-decoration:none;padding:.95rem 0;border-bottom:1px dashed var(--line);font-weight:700;word-break:break-word;font-stretch:105%}
 .contact-card a.line:hover{color:var(--blue)}
-.contact-card .ic{width:42px;height:42px;flex:none;border-radius:50%;background:var(--ice);display:grid;place-items:center;color:var(--blue)}
-.contact-card .ic svg{width:20px;height:20px}
-.contact-card h3{font-size:1.1rem;font-stretch:112%;margin:1.4rem 0 .7rem}
+.ic{width:44px;height:44px;flex:none;border-radius:50%;background:var(--tint);display:grid;place-items:center;color:var(--blue)}
+.ic svg{width:20px;height:20px}
+.contact-card h3{font-size:1.1rem;font-stretch:112%;margin:1.4rem 0 .8rem;color:var(--night)}
 .areas{display:flex;flex-wrap:wrap;gap:.4rem}
-.areas a{font-size:.85rem;text-decoration:none;padding:.35rem .7rem;border-radius:999px;background:var(--ice);font-weight:600}
+.areas a{font-size:.85rem;text-decoration:none;padding:.4rem .8rem;border-radius:999px;background:var(--ice);font-weight:600;transition:.25s}
 .areas a:hover{background:var(--swoosh);color:#fff}
 
 /* FAQ */
-.faq{padding:clamp(4rem,8vw,7rem) 0}
+.faq{padding:clamp(5rem,9vw,8rem) 0}
 .faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem}
-details{border-bottom:1.5px solid #dfe8ef}
-summary{list-style:none;cursor:pointer;padding:1.5rem 0;display:flex;justify-content:space-between;gap:1rem;font-weight:700;font-stretch:112%;font-size:1.2rem;color:var(--char-deep)}
+.faq h2{color:var(--night)}
+.faq .side p{margin-top:1.2rem}
+.faq .side a{color:var(--blue);font-weight:700}
+details{border-bottom:1.5px solid var(--line)}
+details:first-child{border-top:1.5px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:1.6rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;font-stretch:115%;font-size:1.25rem;color:var(--night)}
 summary::-webkit-details-marker{display:none}
-summary .pm{width:34px;height:34px;flex:none;border-radius:50%;border:2px solid var(--swoosh);position:relative;transition:.3s}
-summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--swoosh);transform:translate(-50%,-50%)}
-summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
+.pm{width:38px;height:38px;flex:none;border-radius:50%;border:2px solid var(--swoosh);position:relative;transition:.3s}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:2px;background:var(--swoosh);transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:.3s}
 details[open] .pm{background:var(--swoosh)}
 details[open] .pm::before{background:#fff}
-details[open] .pm::after{transform:translate(-50%,-50%) rotate(0);background:#fff}
-details p{padding:0 3rem 1.6rem 0;color:var(--soft)}
+details[open] .pm::after{transform:translate(-50%,-50%);background:#fff}
+details p{padding:0 3.4rem 1.7rem 0;color:var(--soft)}
 
 /* FOOTER */
-footer{background:var(--char-deep);color:#cfd1ca;padding:4.5rem 0 2rem;font-size:.95rem}
-.fgrid{display:grid;grid-template-columns:1fr 2fr;gap:3rem}
-footer .flogo{height:78px;width:auto;margin-bottom:1.4rem}
-footer a{text-decoration:none;color:#e9eae5}
-footer a:hover{color:var(--swoosh)}
+footer{background:var(--night);color:#b9cadb;padding:5rem 0 2rem;font-size:.95rem;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;width:1100px;height:380px;border:2px solid rgba(63,157,219,.2);border-radius:50%;left:-300px;top:-260px;transform:rotate(-8deg)}
+.fgrid{display:grid;grid-template-columns:1fr 2fr;gap:3rem;position:relative}
+.flogo{height:84px;width:auto;margin-bottom:1.4rem}
+footer a{text-decoration:none;color:#e4edf5}
+footer a:hover{color:var(--sky)}
 footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 .fcontact{display:grid;gap:.5rem}
-.social{display:inline-flex;width:40px;height:40px;border-radius:50%;border:1.5px solid #55574f;align-items:center;justify-content:center;margin-top:.8rem}
+.social{display:inline-flex;width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);align-items:center;justify-content:center;margin-top:1rem}
 .social svg{width:18px;height:18px;fill:#fff}
 .flinks{columns:2;column-gap:2rem}
-.flinks a{display:block;padding:.3rem 0;break-inside:avoid}
-.fbottom{margin-top:3.5rem;padding-top:1.6rem;border-top:1px solid #45463f;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.88rem}
-.fbottom .credit a{color:var(--swoosh);font-weight:700}
+.flinks a{display:block;padding:.32rem 0;break-inside:avoid}
+.fbottom{margin-top:3.5rem;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.88rem;position:relative}
+.credit a{color:var(--sky);font-weight:700}
 
-/* reveal on scroll (one gentle style) */
-.rise{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rise{opacity:0;transform:translateY(26px);transition:opacity 1s var(--out),transform 1s var(--out)}
 .rise.in{opacity:1;transform:none}
 
-/* responsive */
-@media (max-width:1060px){
+@media (max-width:1100px){
   .menu{display:none}
   .burger{display:block}
-  .nav.open .menu{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:#fff;padding:1rem 24px 1.4rem;border-bottom:1px solid #e3ebf1;max-height:80vh;overflow:auto}
-  .nav.open .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 0 1rem;min-width:0;display:block}
   .nav .cta-head{display:none}
+  .nav.open .menu{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:#fff;padding:1rem 28px 1.4rem;max-height:78vh;overflow:auto;box-shadow:0 20px 40px -20px rgba(12,38,64,.4)}
+  .nav.open .menu>li>a,.nav.open .menu>li>button{color:var(--char-deep)}
+  .nav.open .drop{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;padding:0 0 0 1rem;min-width:0;display:block}
+  .assure{grid-template-columns:1fr 1fr}
+  .assure div:nth-child(2){border-right:0}
+  .assure div:nth-child(3){padding-left:0}
 }
 @media (max-width:900px){
-  .hero .wrap,.consult .wrap,.offer .wrap,.why .wrap,.rv,.cta .wrap,.faq .wrap,.fgrid,.addons{grid-template-columns:1fr}
+  .hero-grid,.consult .wrap,.offer .wrap,.svc,.why .wrap,.rv,.cta .wrap,.faq .wrap,.fgrid,.addons,.svc-head{grid-template-columns:1fr}
   .offer .intro{position:static}
-  .panel{grid-template-columns:1fr}
-  .panel .art{min-height:240px}
-  .stage{max-width:420px}
-  .who{grid-template-columns:1fr;}
+  .stage{position:relative;top:auto;max-width:520px;width:100%;order:-1;justify-self:center}
+  .collage{height:520px;max-width:560px;width:100%;justify-self:center}
+  .plancard{right:4%;bottom:-14%}
+  .consult .cvis{margin-bottom:4rem}
+  .who button[aria-selected="true"]{transform:none}
 }
 @media (max-width:640px){
   body{font-size:16px}
+  .wrap{width:calc(100% - 36px)}
   .topbar .area{display:none}
-  .items,.isnt,.why .duo{grid-template-columns:1fr}
-  .sheet{padding:.5rem 1.3rem}
-  .row.bundle{margin:0 -1.3rem;padding:1.3rem}
-  .nav .logo img{height:50px}
+  .nav{height:88px}
+  .home header.site:not(.solid){margin-bottom:-88px}
+  .hero{padding-top:calc(88px + 2rem)}
+  .logo{height:62px;width:157px}
+  .collage{height:430px}
+  .float.f1{left:0;top:4%}
+  .float.f2{right:0}
+  .assure{grid-template-columns:1fr}
+  .assure div{padding-left:0;border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .sheet{padding:.6rem 1.3rem 0}
+  .row.bundle{margin:.4rem -1.3rem 0;padding:1.3rem 1.3rem 1.5rem}
+  .duo{grid-template-columns:1fr}
   .flinks{columns:1}
   details p{padding-right:0}
+  .portrait .tagcard{right:0}
+  .plancard{width:80%}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   .rise{opacity:1;transform:none}
 }
 </style>
 </head>
-<body>
+<body class="home">
 
 <div class="topbar">
   <div class="wrap">
@@ -297,9 +371,9 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
   </div>
 </div>
 
-<header class="site">
+<header class="site" id="hdr">
   <nav class="wrap nav" id="nav" aria-label="Main">
-    <a class="logo" href="https://cleanmyhome.ca/"><img src="images/logo.png" alt="Clean My Home"></a>
+    <a class="logo" href="https://cleanmyhome.ca/" aria-label="Clean My Home home"><img class="light" src="images/logo-light.png" alt="Clean My Home"><img class="dark" src="images/logo.png" alt=""></a>
     <ul class="menu">
       <li><a href="https://cleanmyhome.ca/">Home</a></li>
       <li><button aria-haspopup="true">Services<span class="caret"></span></button>
@@ -341,65 +415,91 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 <main>
 <!-- HERO -->
 <section class="hero">
+  <svg class="sweeps" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path pathLength="1" stroke="#3F9DDB" stroke-opacity=".55" stroke-width="26" d="M-80 760 C 260 420, 820 180, 1520 230"/>
+    <path pathLength="1" stroke="#3F9DDB" stroke-opacity=".38" stroke-width="12" d="M-80 820 C 280 480, 860 250, 1520 300"/>
+    <path pathLength="1" stroke="#8CC6EE" stroke-opacity=".28" stroke-width="5" d="M-80 870 C 300 540, 900 320, 1520 370"/>
+    <path pathLength="1" stroke="#ffffff" stroke-opacity=".08" stroke-width="2" d="M-80 700 C 240 360, 780 110, 1520 160"/>
+  </svg>
   <div class="wrap">
-    <div>
-      <h1><span class="wipe">Professional Cleaning Services for your Home or Business</span><span class="wipe-bar" aria-hidden="true"></span></h1>
-      <p class="sub">Trusted by busy households and working professionals who value consistent, high-quality service.</p>
-      <div class="ctas">
-        <a class="btn" href="#quote">Get Your Free Quote</a>
-        <a class="btn btn--ghost" href="tel:+17802207449"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(780) 220-7449</a>
+    <div class="hero-grid">
+      <div>
+        <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Healthy homes start here</span>
+        <h1>
+          <span class="ln"><span>Professional Cleaning</span></span>
+          <span class="ln"><span>Services for your</span></span>
+          <span class="ln"><span>Home or Business</span></span>
+        </h1>
+        <p class="sub">Trusted by busy households and working professionals who value consistent, high-quality service.</p>
+        <div class="ctas">
+          <a class="btn" href="#quote">Get Your Free Quote</a>
+          <a class="btn btn--line" href="tel:+17802207449"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>(780) 220-7449</a>
+        </div>
       </div>
-      <div class="assure">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Fully insured &amp; covered by WCB</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg>Safe for kids &amp; pets</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Flexible scheduling</span>
+      <div class="collage" aria-hidden="true">
+        <div class="arch a1"><img src="images/kitchen.jpg" alt=""></div>
+        <div class="arch a2"><img src="images/bathroom.jpg" alt=""></div>
+        <div class="ring"><img src="images/bedroom.jpg" alt=""></div>
+        <div class="float f1"><img src="images/google.svg" alt=""><div><b>★★★★★</b>Loved by local families</div></div>
+        <div class="float f2"><b>Bi-weekly</b>our most popular schedule</div>
       </div>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="oval"><img src="images/kitchen.jpg" alt=""></div>
-      <svg class="orbits" viewBox="0 0 500 540">
-        <g class="orbit-spin">
-          <path pathLength="1" stroke-width="9" d="M60 330 C 10 170, 180 40, 330 60 C 470 80, 500 260, 420 380"/>
-          <path pathLength="1" stroke-width="5" d="M40 300 C 20 150, 200 10, 360 40 C 500 70, 520 260, 450 390"/>
-          <path pathLength="1" stroke-width="2.5" d="M28 270 C 30 130, 220 -10, 385 25 C 520 60, 540 250, 475 400"/>
-        </g>
-      </svg>
-      <div class="bubble"><img src="images/bedroom.jpg" alt=""></div>
-      <div class="chip"><img src="images/google.svg" alt=""><div><b>★★★★★</b>Loved by local families on Google</div></div>
+    <div class="assure">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Fully insured</b>Covered by WCB, for your peace of mind</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg><span><b>Safe products</b>For kids, pets and sensitive surfaces</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span><b>Flexible scheduling</b>Weekly, bi-weekly, monthly or one-time</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><b>Confidentiality</b>Professional, discreet service</span></div>
     </div>
   </div>
 </section>
 
+<div class="ribbon" aria-label="Service areas">
+  <div class="track">
+    <span>Leduc</span><span>Edmonton</span><span>Beaumont</span><span>Calmar</span><span>Devon</span><span>St. Albert</span><span>Spruce Grove</span><span>Millet</span><span>Wetaskiwin</span><span>Rural Areas</span>
+    <span aria-hidden="true">Leduc</span><span aria-hidden="true">Edmonton</span><span aria-hidden="true">Beaumont</span><span aria-hidden="true">Calmar</span><span aria-hidden="true">Devon</span><span aria-hidden="true">St. Albert</span><span aria-hidden="true">Spruce Grove</span><span aria-hidden="true">Millet</span><span aria-hidden="true">Wetaskiwin</span><span aria-hidden="true">Rural Areas</span>
+  </div>
+</div>
+
 <!-- CONSULTATION -->
 <section class="consult">
   <div class="wrap">
-    <div class="rise">
-      <h2>Complimentary In-Home Consultations</h2>
-      <p>Arrange a professional walkthrough of your home where we review each space with you, clarify your priorities, and present tailored service options to meet your specific requirements.</p>
-      <a class="btn" href="#quote">Book a Consultation</a>
+    <div class="cvis rise">
+      <div class="photo"><img src="images/bedroom.jpg" alt="Bright bedroom with a window seat and freshly made bed"></div>
+      <div class="plancard">
+        <small>Your walkthrough</small>
+        <svg class="plan" id="plan" viewBox="0 0 600 360" role="img" aria-label="A walkthrough route through each room of a home">
+          <defs><mask id="routeMask"><path class="route-mask" d="M70 300 L70 210 L220 210 L220 100 L390 100 L390 240 L530 240 L530 80"/></mask></defs>
+          <path class="walls" d="M20 170 H150 M150 170 V20 M300 20 V140 M300 180 V340 M300 210 H450 M450 210 V340 M450 20 V160 M150 250 V340"/>
+          <rect class="walls" x="20" y="20" width="560" height="320" rx="14"/>
+          <text x="38" y="56">Bedroom</text><text x="168" y="56">Living room</text><text x="318" y="56">Kitchen</text><text x="468" y="56">Bath</text>
+          <text x="38" y="328">Entry</text><text x="318" y="328">Laundry</text><text x="468" y="328">Office</text>
+          <path class="route" mask="url(#routeMask)" d="M70 300 L70 210 L220 210 L220 100 L390 100 L390 240 L530 240 L530 80"/>
+          <circle class="pin" cx="70" cy="300" r="10"/><circle class="pin" cx="220" cy="100" r="10"/><circle class="pin" cx="390" cy="240" r="10"/><circle class="pin" cx="530" cy="80" r="10"/>
+        </svg>
+      </div>
     </div>
-    <svg class="plan" id="plan" viewBox="0 0 600 380" role="img" aria-label="Illustration of a walkthrough route through the rooms of a home">
-      <defs><mask id="routeMask"><path class="route-mask" d="M70 320 L70 220 L220 220 L220 110 L390 110 L390 250 L530 250 L530 90"/></mask></defs>
-      <rect class="room" x="20" y="20" width="560" height="340" rx="14"/>
-      <path class="walls" d="M20 180 H150 M150 180 V20 M300 20 V150 M300 190 V360 M300 220 H450 M450 220 V360 M450 20 V170 M150 260 V360"/>
-      <rect class="walls" x="20" y="20" width="560" height="340" rx="14"/>
-      <text x="40" y="60">Bedroom</text><text x="170" y="60">Living room</text><text x="320" y="60">Kitchen</text><text x="470" y="60">Bath</text>
-      <text x="40" y="350">Entry</text><text x="320" y="345">Laundry</text><text x="470" y="345">Office</text>
-      <path class="route" mask="url(#routeMask)" d="M70 320 L70 220 L220 220 L220 110 L390 110 L390 250 L530 250 L530 90"/>
-      <circle class="pin" cx="70" cy="320" r="9"/>
-      <circle class="pin" cx="220" cy="110" r="9"/>
-      <circle class="pin" cx="390" cy="250" r="9"/>
-      <circle class="pin" cx="530" cy="90" r="9"/>
-    </svg>
+    <div class="rise">
+      <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Free of charge</span>
+      <h2>Complimentary In-Home Consultations</h2>
+      <p class="lede">Arrange a professional walkthrough of your home where we review each space with you, clarify your priorities, and present tailored service options to meet your specific requirements.</p>
+      <ol class="steps">
+        <li><i>1</i>Review each space with you</li>
+        <li><i>2</i>Clarify your priorities</li>
+        <li><i>3</i>Present tailored service options</li>
+      </ol>
+      <a class="btn btn--dark" href="#quote">Book a Consultation</a>
+    </div>
   </div>
 </section>
 
 <!-- WHAT WE OFFER -->
 <section class="offer">
+  <div class="bg" id="parallax"></div>
   <div class="wrap">
     <div class="intro rise">
+      <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Customized to each home</span>
       <h2>What We Offer</h2>
-      <p class="lede">A checklist built around your home, so your specific requests are met and nothing is missed.</p>
+      <p class="lede">We use checklists that are customized to each home to ensure your specific requests are met and nothing is missed.</p>
     </div>
     <div class="sheet" id="sheet">
       <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Flexible scheduling</h3><p>Weekly, bi-weekly (most popular), monthly, or one-time</p></div></div>
@@ -407,7 +507,7 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
       <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Safe products</h3><p>For kids, pets, and sensitive surfaces</p></div></div>
       <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Fully insured, covered by WCB</h3><p>And committed to your peace of mind</p></div></div>
       <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Customizable to your needs</h3><p>We can work with you to build a plan that meets your needs</p></div></div>
-      <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Consistency</h3><p>We use checklists that are customized to each home to ensure your specific requests are met and nothing is missed</p></div></div>
+      <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Consistency</h3><p>Checklists customized to each home, so nothing is missed</p></div></div>
       <div class="row"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Confidentiality</h3><p>Professional, discreet service</p></div></div>
       <div class="row bundle"><span class="box"><svg viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9"/></svg></span><div><h3>Bundle and save</h3><p>Book your residential cleaning with Clean My Home and your residential furnace and duct cleaning with Clean My Air and save</p></div></div>
     </div>
@@ -418,70 +518,58 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 <section class="services" id="services">
   <div class="wrap">
     <div class="svc-head rise">
-      <h2>Our Services</h2>
-      <p class="lede">Pick the package that fits your home, then add only the extras you want.</p>
-    </div>
-    <div class="tabs" role="tablist" aria-label="Cleaning packages">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p1" id="t1">Standard Cleaning</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p2" id="t2">Deep Cleaning</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="t3">Touch-Up</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="t4">Move In/Out</button>
-    </div>
-
-    <div class="panel show" id="p1" role="tabpanel" aria-labelledby="t1">
-      <div class="body">
-        <h3>Standard Cleaning Package</h3>
-        <ul class="items">
-          <li><b>Bathroom cleaning and sanitization</b><span>Tubs/showers, sinks/vanities, toilets</span></li>
-          <li><b>Kitchen cleaning and sanitization</b><span>Appliance exteriors, microwave interior and exterior, countertops, backsplash, sinks, cabinet exteriors</span></li>
-          <li><b>All flooring vacuumed and/or mopped</b></li>
-          <li><b>Surface dusting throughout home</b><span>Shelving, tables, light fixtures, windowsills, door trim, baseboards</span></li>
-          <li><b>Sanitization of high-touch areas</b><span>Light switches, knobs, railings</span></li>
-          <li><b>Light tidying in common areas</b></li>
-        </ul>
+      <div>
+        <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Packages</span>
+        <h2>Our Services</h2>
       </div>
-      <div class="art"><img src="images/kitchen.jpg" alt="Clean kitchen with white cabinets and quartz countertop"><span class="tag">Kitchens, baths &amp; living areas</span></div>
+      <p class="lede">Choose the package that fits your home. Add only the extra services you actually want.</p>
     </div>
-
-    <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2">
-      <div class="body">
-        <h3>Deep Cleaning Package</h3>
-        <ul class="items">
-          <li><b>Everything in the Standard Cleaning Package</b><span>With a focus on removing built-up dirt, grime and hair</span></li>
-          <li><b>Additional deep cleaning tasks</b><span>Add on only the extra services you actually want</span></li>
-          <li><b>Full wash of bathroom and kitchen cabinet exteriors</b></li>
-          <li><b>Detailed cleaning of faucets, sinks, showers, tubs</b><span>Removal of built-up grime, mildew, water spots, limescale</span></li>
-        </ul>
-      </div>
-      <div class="art">
-        <svg viewBox="0 0 200 200" fill="none" stroke="#3F9DDB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 70h80v18H60z"/><path d="M70 88v20c0 6-10 10-10 22v40h80v-40c0-12-10-16-10-22V88"/><path d="M85 70V48h30v22"/><path d="M115 52h22l8 10"/><circle cx="160" cy="50" r="4" fill="#3F9DDB"/><circle cx="168" cy="70" r="3" fill="#3F9DDB"/><circle cx="154" cy="78" r="2.5" fill="#3F9DDB"/><path d="M80 140h40" stroke="#fff"/></svg>
-        <span class="tag" style="position:absolute;left:1.5rem;bottom:1.5rem">Built-up grime, gone</span>
-      </div>
-    </div>
-
-    <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3">
-      <div class="body">
-        <h3>Touch-Up Package</h3>
-        <div class="isnt">
-          <div><h4>What it is</h4><p>Perfect for homeowners preparing for an open house or hosting guests, this light refresh provides a quick, high-impact polish to make your home look clean and inviting, without the time or expense of a standard or deep clean. This service focuses exclusively on high-visibility, priority areas to give your space an immediate, pristine visual appeal.</p></div>
-          <div><h4>What it isn’t</h4><p>To keep this option fast and cost-effective, this service is not a detailed or comprehensive cleaning. It does not include washing of baseboards or door frames, cabinet exteriors, inside appliances, detailed scrubbing, grout work, or moving items to clean underneath. If your home requires a thorough, top-to-bottom detailed clean, our standard or deep cleaning packages are the ideal choice.</p></div>
+    <div class="svc">
+      <div>
+        <div class="tabs" role="tablist" aria-label="Cleaning packages">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="d1" data-img="0">Standard Cleaning<svg class="arc" viewBox="0 0 44 16" fill="none" stroke="#3F9DDB" stroke-width="3.5" stroke-linecap="round"><path d="M2 13C13 3 30 1 42 5"/></svg></button>
+          <div class="detail show" id="d1" role="tabpanel">
+            <ul class="items">
+              <li><b>Bathroom cleaning and sanitization</b><span>Tubs/showers, sinks/vanities, toilets</span></li>
+              <li><b>Kitchen cleaning and sanitization</b><span>Appliance exteriors, microwave interior and exterior, countertops, backsplash, sinks, cabinet exteriors</span></li>
+              <li><b>All flooring vacuumed and/or mopped</b></li>
+              <li><b>Surface dusting throughout home</b><span>Shelving, tables, light fixtures, windowsills, door trim, baseboards</span></li>
+              <li><b>Sanitization of high-touch areas</b><span>Light switches, knobs, railings</span></li>
+              <li><b>Light tidying in common areas</b></li>
+            </ul>
+          </div>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="d2" data-img="1">Deep Cleaning<svg class="arc" viewBox="0 0 44 16" fill="none" stroke="#3F9DDB" stroke-width="3.5" stroke-linecap="round"><path d="M2 13C13 3 30 1 42 5"/></svg></button>
+          <div class="detail" id="d2" role="tabpanel">
+            <ul class="items">
+              <li><b>All services included from the Standard Cleaning Package</b><span>But with a focus on removing built-up dirt, grime and hair</span></li>
+              <li><b>Additional deep cleaning tasks</b><span>Add on only the extra services you actually want</span></li>
+              <li><b>Full wash of bathroom and kitchen cabinet exteriors</b></li>
+              <li><b>Detailed cleaning of faucets, sinks, showers, tubs</b><span>Removal of built-up grime, mildew, water spots, limescale</span></li>
+            </ul>
+          </div>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="d3" data-img="2">Touch-Up<svg class="arc" viewBox="0 0 44 16" fill="none" stroke="#3F9DDB" stroke-width="3.5" stroke-linecap="round"><path d="M2 13C13 3 30 1 42 5"/></svg></button>
+          <div class="detail" id="d3" role="tabpanel">
+            <div class="isnt">
+              <div><h4>What it is</h4><p>Perfect for homeowners preparing for an open house or hosting guests, this light refresh provides a quick, high-impact polish to make your home look clean and inviting, without the time or expense of a standard or deep clean. It focuses exclusively on high-visibility, priority areas.</p></div>
+              <div><h4>What it isn’t</h4><p>Not a detailed or comprehensive cleaning. It does not include washing of baseboards or door frames, cabinet exteriors, inside appliances, detailed scrubbing, grout work, or moving items to clean underneath. For a thorough, top-to-bottom clean, our standard or deep cleaning packages are the ideal choice.</p></div>
+            </div>
+          </div>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="d4" data-img="3">Move In/Out<svg class="arc" viewBox="0 0 44 16" fill="none" stroke="#3F9DDB" stroke-width="3.5" stroke-linecap="round"><path d="M2 13C13 3 30 1 42 5"/></svg></button>
+          <div class="detail" id="d4" role="tabpanel">
+            <ul class="items">
+              <li><b>Empty home</b><span>All services from the Standard and Deep Cleaning Packages</span></li>
+              <li><b>Additional services</b><span>Add on only the extra services you actually need</span></li>
+              <li><b>Cabinet/drawer interiors</b></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="art"><img src="images/bedroom.jpg" alt="Bright, tidy bedroom with window seat"><span class="tag">Event- or show-ready, fast</span></div>
-    </div>
-
-    <div class="panel" id="p4" role="tabpanel" aria-labelledby="t4">
-      <div class="body">
-        <h3>Move In/Out Package <small style="font-size:.55em;font-weight:600;color:var(--soft)">(Empty Home)</small></h3>
-        <ul class="items">
-          <li><b>All services from the Standard and Deep Cleaning Packages</b></li>
-          <li><b>Additional services</b><span>Add on only the extra services you actually need</span></li>
-          <li><b>Cabinet/drawer interiors</b></li>
-        </ul>
-      </div>
-      <div class="art">
-        <svg viewBox="0 0 200 200" fill="none" stroke="#3F9DDB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M30 100 100 40l70 60"/><path d="M48 86v80h104V86"/><path d="M84 166v-44h32v44"/><rect x="118" y="132" width="44" height="34" rx="3" stroke="#fff"/><path d="M118 146h44M140 132v14" stroke="#fff"/></svg>
-        <span class="tag" style="position:absolute;left:1.5rem;bottom:1.5rem">Empty home, fresh start</span>
+      <div class="stage" id="stage">
+        <img class="on" src="images/kitchen.jpg" alt="Spotless white kitchen with black faucet and open shelving">
+        <img src="images/bathroom.jpg" alt="Gleaming bathroom with glass shower and fresh towels">
+        <img src="images/living-room.jpg" alt="Staged living room ready for guests">
+        <img src="images/move-out.jpg" alt="Empty home with clean hardwood floors and open cabinets">
+        <span class="lbl" id="lbl">Standard Cleaning Package</span>
       </div>
     </div>
 
@@ -491,7 +579,7 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
         <span>Interior windows</span><span>Blinds/curtains</span><span>Interior oven</span><span>Interior fridge</span><span>Cabinet/drawer interiors</span><span>Baseboards &amp; trim wet wiping</span><span>Wall washing</span>
       </div>
     </div>
-    <div class="svc-cta"><a class="btn btn--dark" href="#quote">Get Your Free Quote</a></div>
+    <div class="svc-cta"><a class="btn" href="#quote">Get Your Free Quote</a></div>
   </div>
 </section>
 
@@ -499,22 +587,23 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 <section class="why">
   <div class="wrap">
     <div class="portrait rise">
+      <svg viewBox="0 0 600 300" aria-hidden="true"><path stroke-width="9" d="M30 290 C 90 90, 330 10, 560 60"/><path stroke-width="4" d="M10 260 C 80 70, 340 -10, 590 35"/></svg>
       <div class="frame"><img src="images/owner.jpg" alt="Clean My Home owner"></div>
-      <svg viewBox="0 0 460 506" aria-hidden="true"><path stroke-width="7" d="M40 380 C -10 200, 120 20, 300 40"/><path stroke-width="3.5" d="M20 340 C -10 170, 140 0, 330 25"/></svg>
+      <div class="tagcard"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg></i>Family-run business</div>
     </div>
     <div class="rise">
-      <p class="eyebrow">Family-Driven Care</p>
+      <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Family-Driven Care</span>
       <h2>Why Choose Us</h2>
-      <p class="lede">We’re a family-run business dedicated to maintaining a healthy, clean home for you and your family.</p>
+      <p class="lede">A family-run business dedicated to maintaining a healthy, clean home for you and your family.</p>
       <div class="history">
         <h3>Our History</h3>
         <p>Healthy homes start here. Professional eco-cleaning in Leduc, Edmonton &amp; surrounding areas, including Beaumont, Calmar, St. Albert &amp; Spruce Grove.</p>
       </div>
       <div class="duo">
-        <div><b>Confidentiality</b><span>Professional, discreet service</span></div>
+        <div><b>Consistency</b><span>Checklists customized to each home</span></div>
         <div><b>Peace of mind</b><span>Fully insured and covered by WCB</span></div>
       </div>
-      <p style="margin-top:1.8rem"><a class="btn btn--ghost" href="https://cleanmyhome.ca/about-us">About Us</a></p>
+      <div class="more"><a class="btn btn--ghost" href="https://cleanmyhome.ca/about-us">About Us</a></div>
     </div>
   </div>
 </section>
@@ -522,20 +611,23 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 <!-- REVIEWS -->
 <section class="reviews">
   <div class="wrap">
-    <h2 class="rise">Reviews</h2>
+    <div class="rise">
+      <span class="kicker"><svg viewBox="0 0 42 14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M2 12C12 3 28 1 40 4"/></svg>Google reviews</span>
+      <h2>Reviews</h2>
+    </div>
     <div class="rv">
-      <div class="who" role="tablist" aria-label="Reviewers">
-        <button role="tab" aria-selected="true" data-q="q1"><img src="images/review-2.png" alt=""><span><b>Sandy Timm</b><small>9 months ago</small></span></button>
-        <button role="tab" aria-selected="false" data-q="q2"><img src="images/review-1.png" alt=""><span><b>Miranda Koens</b><small>10 months ago</small></span></button>
-        <button role="tab" aria-selected="false" data-q="q3"><img src="images/review-3.png" alt=""><span><b>Stephanie Lopushinsky</b><small>10 months ago</small></span></button>
-      </div>
       <div class="quote">
-        <svg class="qmark" viewBox="0 0 100 80" fill="#3F9DDB"><path d="M0 80V46C0 18 14 3 40 0v16C26 20 20 30 20 42h20v38zm56 0V46C56 18 70 3 96 0v16c-14 4-20 14-20 26h20v38z"/></svg>
+        <svg class="qmark" viewBox="0 0 100 80" fill="#8CC6EE"><path d="M0 80V46C0 18 14 3 40 0v16C26 20 20 30 20 42h20v38zm56 0V46C56 18 70 3 96 0v16c-14 4-20 14-20 26h20v38z"/></svg>
         <div class="stars">★★★★★</div>
         <blockquote id="q1" class="show">Debbie and her assistant at Clean My Home are absolutely fantastic! They provided our first monthly cleaning service and went above and beyond. With three bathrooms, a full kitchen, three bedrooms, and all our main living areas, they handled everything with incredible attention to detail.</blockquote>
         <blockquote id="q2">This was hands down one of the best cleaning experiences I’ve had. My home looks and smells incredible! They were thorough, efficient, and very professional. It’s such a relief to come home to a perfectly clean house. I highly recommend them.</blockquote>
         <blockquote id="q3">Amazing Amazing Service. This fabulous team has been providing their cleaning service to us for awhile now. I need to express how tremendously happy we are. It smells amazing in here and everything is done to perfection. This lovely team exemplifies a great honest trustworthy team.</blockquote>
         <div class="src"><img src="images/google.svg" alt="">Google review</div>
+      </div>
+      <div class="who" role="tablist" aria-label="Reviewers">
+        <button role="tab" aria-selected="true" data-q="q1"><img src="images/review-2.png" alt=""><span><b>Sandy Timm</b><small>9 months ago</small></span></button>
+        <button role="tab" aria-selected="false" data-q="q2"><img src="images/review-1.png" alt=""><span><b>Miranda Koens</b><small>10 months ago</small></span></button>
+        <button role="tab" aria-selected="false" data-q="q3"><img src="images/review-3.png" alt=""><span><b>Stephanie Lopushinsky</b><small>10 months ago</small></span></button>
       </div>
     </div>
   </div>
@@ -543,10 +635,11 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 
 <!-- QUOTE -->
 <section class="cta" id="quote">
+  <div class="bg"></div>
   <svg class="sweep" viewBox="0 0 1440 600" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#fff">
-    <path stroke-opacity=".22" stroke-width="40" d="M-100 520 C 300 260, 900 160, 1600 260"/>
-    <path stroke-opacity=".16" stroke-width="16" d="M-100 580 C 320 320, 940 230, 1600 330"/>
-    <path stroke-opacity=".12" stroke-width="6" d="M-100 620 C 340 380, 980 300, 1600 400"/>
+    <path stroke-opacity=".16" stroke-width="40" d="M-100 540 C 300 280, 900 180, 1600 280"/>
+    <path stroke-opacity=".12" stroke-width="14" d="M-100 600 C 320 340, 940 250, 1600 350"/>
+    <path stroke-opacity=".1" stroke-width="5" d="M-100 640 C 340 400, 980 320, 1600 420"/>
   </svg>
   <div class="wrap">
     <div class="rise">
@@ -554,7 +647,7 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
       <p>Tell us about your home or business and we’ll be in touch with options that fit your space and schedule.</p>
       <div class="ctas">
         <a class="btn btn--white" href="https://clienthub.getjobber.com/hubs/1c58fa39-d194-4b14-b537-ced17895057e/public/requests/1934086/embedded_new?source=sp_website" target="_blank" rel="noopener">Request a Free Quote</a>
-        <a class="btn btn--dark" href="tel:+17802207449">Call (780) 220-7449</a>
+        <a class="btn btn--line" href="tel:+17802207449">Call (780) 220-7449</a>
       </div>
     </div>
     <div class="contact-card rise">
@@ -580,7 +673,10 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 <!-- FAQ -->
 <section class="faq">
   <div class="wrap">
-    <div class="rise"><h2>Frequently asked questions</h2></div>
+    <div class="side rise">
+      <h2>Frequently asked questions</h2>
+      <p class="lede">Still have a question? Call <a href="tel:+17802207449">(780) 220-7449</a>.</p>
+    </div>
     <div>
       <details open><summary>What are your service areas?<span class="pm"></span></summary><p>We clean homes and businesses in Leduc, Edmonton, Calmar, Devon, Beaumont, St. Albert, Spruce Grove, Millet and Wetaskiwin, plus residential cleaning in rural areas.</p></details>
       <details><summary>How do you determine pricing for your services?<span class="pm"></span></summary><p>Every home is different. Request a free quote or book a complimentary in-home consultation, and we’ll present tailored service options to meet your specific requirements.</p></details>
@@ -633,30 +729,43 @@ footer h4{color:#fff;font-stretch:115%;font-size:1rem;margin-bottom:1rem}
 </footer>
 
 <script>
-// mobile menu
-const nav=document.getElementById('nav'),burger=document.getElementById('burger');
-burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o)});
-// tabs
+const hdr=document.getElementById('hdr'),nav=document.getElementById('nav'),burger=document.getElementById('burger');
+const setHdr=()=>hdr.classList.toggle('solid',window.scrollY>40||nav.classList.contains('open'));
+addEventListener('scroll',setHdr,{passive:true});setHdr();
+burger.addEventListener('click',()=>{const o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o);setHdr()});
+
+// package tabs + image stage
+const imgs=document.querySelectorAll('#stage img'),lbl=document.getElementById('lbl');
+const names=['Standard Cleaning Package','Deep Cleaning Package','Touch-Up Package','Move In/Out Package (Empty Home)'];
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected','false'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.detail').forEach(d=>d.classList.remove('show'));
   t.setAttribute('aria-selected','true');document.getElementById(t.getAttribute('aria-controls')).classList.add('show');
+  const i=+t.dataset.img;imgs.forEach((im,k)=>im.classList.toggle('on',k===i));lbl.textContent=names[i];
 }));
+
 // reviews
 document.querySelectorAll('.who button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.who button').forEach(x=>x.setAttribute('aria-selected','false'));
   document.querySelectorAll('.quote blockquote').forEach(q=>q.classList.remove('show'));
   b.setAttribute('aria-selected','true');document.getElementById(b.dataset.q).classList.add('show');
 }));
-// scroll-triggered moments
+
+// scroll moments
 const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return;const el=e.target;
   if(el.id==='plan')el.classList.add('on');
-  else if(el.id==='sheet')el.querySelectorAll('.row').forEach((r,i)=>setTimeout(()=>r.classList.add('done'),i*230));
+  else if(el.id==='sheet')el.querySelectorAll('.row').forEach((r,i)=>setTimeout(()=>r.classList.add('done'),i*220));
   else el.classList.add('in');
   io.unobserve(el);
-}),{threshold:.25});
+}),{threshold:.2});
 document.querySelectorAll('.rise,#plan,#sheet').forEach(el=>io.observe(el));
+
+// gentle parallax on the living-room backdrop
+const px=document.getElementById('parallax');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('scroll',()=>{const r=px.parentElement.getBoundingClientRect();px.style.transform=`translateY(${(r.top*-0.12).toFixed(1)}px)`},{passive:true});
+}
 </script>
 </body>
 </html>
